@@ -1,0 +1,30 @@
+<div class="navbar">
+    
+    <ul>
+        <li>
+            <div class="dropdown">
+                <input type="image" src="../assets/loginn.png" style="height: 35px; width: 35px;" class="dropbtn" />
+                <div class="dropdown-content">
+                    <a [routerLink]="['/trackticket']" style="font-family: 'Arial';"><b> Track Booking </b></a>
+                    <span *ngIf="isStatus then block2 else block1"></span>
+                    <ng-template #block1>
+                        <a [routerLink]="['/loginLink']" style="font-family: 'Arial';"> <b>Login/Sign-up </b></a>
+                    </ng-template>
+                    <ng-template #block2>
+                        <a [routerLink]="['/userDashBoard']" style="font-family: 'Arial';"> <b>User-DashBoard </b></a>
+                        <a (click)="signOut()">Sign Out</a>
+                    </ng-template>
+                    <a [routerLink]="['/feedbackLink']" style="font-family: 'Arial';"> <b>Feedback </b></a>
+                </div>
+            </div>
+            <li><a [routerLink]="['/contactUsLink']" style="float: right; font-family: 'Arial';"><b>CONTACT US </b></a></li>
+
+            <li><a href=#about-section style="float: right; font-family: 'Arial';"> <b>ABOUT US </b></a></li>
+            <li><a [routerLink]="['/homeLink']" style="float: right; font-family: 'Arial';"> <b>HOME </b></a></li>
+    </ul>
+</div>
+<div class="row">
+    <div class="main">
+        <router-outlet></router-outlet>
+    </div>
+</div>
